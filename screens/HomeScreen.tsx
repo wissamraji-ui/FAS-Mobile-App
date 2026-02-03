@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, Linking } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Linking, Image } from 'react-native';
 import { colors, spacing, typography } from '../constants/theme';
 
 const STATS = [
@@ -24,6 +24,7 @@ export default function HomeScreen() {
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.hero}>
         <Text style={styles.heroTitle}>Faculty of Arts and Sciences</Text>
+        <Image source={require('../assets/fas-logo.png')} style={styles.logo} />
         <Text style={styles.heroSubtitle}>American University of Beirut</Text>
         <Text style={styles.tagline}>AUB's Oldest and Largest Faculty</Text>
       </View>
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: spacing.lg,
     marginBottom: spacing.lg,
+    alignItems: 'center',
   },
   heroTitle: {
     ...typography.title,
@@ -87,6 +89,12 @@ const styles = StyleSheet.create({
   tagline: {
     ...typography.caption,
     color: 'rgba(255,255,255,0.85)',
+  },
+  logo: {
+    width: 96,
+    height: 96,
+    marginBottom: spacing.sm,
+    resizeMode: 'contain',
   },
   section: { marginBottom: spacing.lg },
   sectionTitle: {
