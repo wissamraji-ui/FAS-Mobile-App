@@ -25,7 +25,7 @@ const MoreStack = createNativeStackNavigator<MoreStackParamList>();
 const headerOptions = {
   headerStyle: { backgroundColor: colors.primary },
   headerTintColor: '#FFF',
-  headerTitleStyle: { fontWeight: '600', fontSize: 18 },
+  headerTitleStyle: { fontWeight: '600' as const, fontSize: 18 },
 };
 
 function wrapStack(Component: ComponentType<any>, title: string) {
